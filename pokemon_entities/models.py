@@ -68,4 +68,4 @@ class PokemonEntity(models.Model):
                                   )
 
     def __str__(self):
-        return f'{self.Pokemon.title} {self.level} уровень, появится: {self.appeared_at}'
+        return f'{self.Pokemon.title} {self.level} уровень'

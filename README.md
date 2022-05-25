@@ -23,12 +23,22 @@
 ```sh
 pip install -r requirements.txt
 ```
-
+Создайте базу данных из готовых моделей
+```sh
+manage.py makemigrations
+python manage.py migrate    
+```
+Создайте пользователя базы данных
+```
+ python manage.py createsuperuser
+```
 Запустите разработческий сервер
 
 ```sh
 python3 manage.py runserver
 ```
+Для добавления данных в БД можно использовать встроенную административную панель, по умолчанию она доступа по адресу:
+>http://127.0.0.1:8000/admin/
 
 ### Переменные окружения
 

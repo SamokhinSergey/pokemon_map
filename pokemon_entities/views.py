@@ -58,8 +58,8 @@ def show_pokemon(request, pokemon_id):
     except Pokemon.DoesNotExist:
         return HttpResponseNotFound('<h1>Такой покемон не найден</h1>')
 
-    related_pokemons = requested_pokemon.next_evolutions.all()
     next_evolution = {}
+    related_pokemons = requested_pokemon.next_evolutions.all()
     for related_pokemon in related_pokemons:
         if related_pokemon:
             next_evolution = {
@@ -67,6 +67,7 @@ def show_pokemon(request, pokemon_id):
                 'pokemon_id': related_pokemon.id,
                 'img_url': request.build_absolute_uri(f'/media/{related_pokemon.image}'),
             }
+            break
 
     previous_evolution = {}
     if requested_pokemon.evolution:
