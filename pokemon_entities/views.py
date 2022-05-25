@@ -91,7 +91,8 @@ def show_pokemon(request, pokemon_id):
     for pokemon_entity in pokemons_entity:
         if localtime(pokemon_entity.disappeared_at) > localtime() > localtime(pokemon_entity.appeared_at):
             add_pokemon(
-                folium_map, pokemon_entity.lat,
+                folium_map,
+                pokemon_entity.lat,
                 pokemon_entity.lon,
                 request.build_absolute_uri(f'/media/{pokemon_entity.Pokemon.image}'),
             )
