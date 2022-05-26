@@ -25,7 +25,7 @@ pip install -r requirements.txt
 ```
 Создайте базу данных из готовых моделей
 ```sh
-manage.py makemigrations
+python manage.py makemigrations
 python manage.py migrate    
 ```
 Создайте пользователя базы данных
